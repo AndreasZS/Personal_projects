@@ -2,9 +2,9 @@
 # My first script
 
 sudo apt-get update
-check=$(sudo apt list --upgradeable)
+CHECK=$(sudo apt list --upgradeable)
 
-if [ $check != "Listing..." ]
+if [ "$CHECK" != "Listing..." ]
     then echo "TIME TO UPGRADE!"; sudo apt-get upgrade
 else
     echo $'NOTHING TO UPGRADE. \nGOODBYE.'
