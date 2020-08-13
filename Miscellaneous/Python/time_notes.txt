@@ -1,0 +1,48 @@
+import time
+
+clock_getres()
+clock_gettime()
+
+# Clock ID Constants
+# ==================
+# Same as CLOCK_MONOTONIC but includes any time that system is suspended
+time.CLOCK_BOOTTIME
+# Cannot be set and represents monotonic time since some unspecified starting point
+time.CLOCK_MONOTONIC
+# Provides access to raw hardware-based time that is not subject to Network Time Protocol adjustments
+time.CLOCK_MONOTONIC_RAW
+# High-resolution per-process timer from CPU
+time.CLOCK_PROCESS_CPUTIME_ID
+# System-wide real-time clock. Requires privileges to set
+time.CLOCK_REALTIME
+
+# Return clk_id of thread-specific CPU-time clock for thread_id
+# get thread_id using threading.get_ident() or ident attribute of threading.Thread object
+time.pthread_getcpuclockid(thread_id)
+# Get resolution(precision) of specified clk_id
+time.clock_getres(clk_id)
+# Return time of clk_id, output is float
+time.clock_gettime(clk_id)
+# Return time of clk_id as nanoseconds, output is int
+time.clock_gettime_ns(clk_id)
+# Set time of specified clk_id. Only CLOCK_REALTIME is allowed as clk_id thusfar
+# time.clock_settime(clk_id,time: float)
+# Set time with nanoseconds
+# time.clock_settime_ns(clk_id,time: int)
+# Get information on specified clock as a namespace object
+# 'monotonic', 'perf_counter', 'process_time', 'thread_time', 'time'
+# Result has attributes: adjustable, implmentation, monotonic, resolution
+time.get_clock_info(name)
+# Return value in fractional seconds of monotonic clock. Only difference between
+# results of consecutive calls is valid
+time.monotonic()
+time.monotonic_ns()
+# Return value of performance counter (clock with highest available resolution)
+time.perf_counter()
+time.perf_counter_ns()
+# Return value of sum of system and user CPU time of current process. Does not include time
+# elapsed during sleep. It is process-wide.
+time.process_time()
+time.process_time_ns()
+# Suspend Execution of calling thread for given number of seconds
+time.sleep(secs)
