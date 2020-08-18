@@ -1,5 +1,7 @@
 #!/bin/bash
 # My first script
+# Perform apt-get update and apt-get upgrade with a single command
+# Only upgrades if there are packages to upgrade
 
 sudo apt-get update
 CHECK=$(sudo apt list --upgradeable)
