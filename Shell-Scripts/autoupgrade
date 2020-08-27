@@ -1,15 +1,15 @@
 #!/bin/bash
 # My first script
-# Perform apt-get update and apt-get upgrade with a single command
+# Perform apt-update and apt-upgrade with a single command
 # Only upgrades if there are packages to upgrade
 
-sudo apt-get update
-CHECK=$(sudo apt list --upgradeable)
+sudo apt update
+CHECK=$(sudo apt list --upgradeable 2> /dev/null) 
 
 if [ "$CHECK" != "Listing..." ]
-    then echo "TIME TO UPGRADE!"; sudo apt-get upgrade
+    then echo $'TIME TO UPGRADE!\n'; sudo apt upgrade 
 else
-    echo $'NOTHING TO UPGRADE. \nGOODBYE.'
+    echo $'\nNOTHING TO UPGRADE. \nGOODBYE.'
 fi
 
-# sudo apt-get upgrade
+

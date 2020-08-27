@@ -1,0 +1,15 @@
+matplotlib - apt: python3-matplotlib 2.1.1, pip3: matplotlib 3.3.1
+numpy      - apt: python3-numpy 1.13.3, pip3: numpy 1.19.1
+scipy      - apt: python3-scipy 0.19.1, pip3: scipy 1.5.2
+pytest     - apt: python3-pytest 3.3.2, pip3: pytest 6.0.1
+networkx   - apt: python3-networkx 1.11, pip3: networkx 2.5
+pyyaml     - apt: python3-yaml 3.12, pip3: PyYAML 5.3.1
+requests   - apt: python3-requests 2.18.4, pip3: requests 2.24.0  (but there is also requests-unixsocket 0.1.5
+trimesh    - pip3: trimesh 3.8.4
+triangle   - pip3: triangle 20200424
+pyglet     - apt: python-pyglet 1.3.0, pip3: pyglet 1.5.7
+meshpy     - pip3: MeshPy 2018.2.1
+shapely    - apt: python3-shapely 1.6.4-1, pip3: Shapely 1.7.1
+rtree      - apt: python3-rtree 0.8.3+ds-1, pip3: Rtree 0.9.4 (there is also Rtree-linux but it's not installed on my system)
+
+pip        - apt: python3-pip 9.0.1

@@ -1,0 +1,62 @@
+Bash is the default interepreter on many GNU/Linux systems. To see what the default interpreter is on 
+your current system use the command 'echo $SHELL'. 
+To define a script's interpreter, locate the full path, then make the fire line of the script the full  path prefixed with a shebang '#!'. So far bash scripts the first line is '#!/bin/bash' (without the quotes).
+Shell scripts need to be made executable using the 'chmod +x <FILENAME>' command. Alternatively you can execute a shell script by calling the interpreter directly e.g. 'bash SCRIPT.sh'.
+It is best to develop a script slowly and test it frequently, do not try to write an entire script in one go.
+Never name private variables using UPPERCASE characters. uppercase variable names are reserved for internal shell variables and you could mistakenly overwrite them.
+Parameter expansion is done as follows '${parameter}' curly braces can be used when a variable is followed by characters which are not part of its name. This is used in 'backup.sh' when we write '/tmp/${user}_home_$(date +%Y-%m-%d_%H%M%S).tar.gz'
+When a command is executed there are three possible outcomes:
+1. Command produces expected output
+2. Command generates an error
+3. Command does not produce any output at all
+
+'>' notation is used to redirect stdout to a file
+'2>' is used to redirect stderr
+'&>' is used to redirect stdout and stderr
+'cat' is used to display content of any given file.
+if you are unsure whether your command produced stdout or stderr, try to redirect its output. You can know which it produced depending on which notation is successful '>' or '2>'
+You can redirect an unwanted message to '/dev/null'. this location will discard any data redirected to it, for more info run 'man null'.
+There is also input called 'stdin' which is generally from a keyboard.
+Command input can also be accepted from a file using '<' notation.
+e.g. 'cat < file1.txt'
+Numeric and String Comparisons:
+Description    Numeric    String
+--------------------------------
+less than	-lt        <
+greater than	-gt	   >
+equal		-eq	   =
+not equal	-ne	   !=
+less or eq	-le	   N/A
+greater or eq	-ge	   N/A
+
+'echo $?' can be used to check the return value of the previously executed evaluation. Return values are true or false reperesented by 0 and 1 (This is different from most boolean representations).
+'$#' prints the total number of supplied arguments
+'$*' prints all arguments
+'-z' returns true if length of string is zero
+'-d' returns true if directory exists
+exit value of 1 means error
+looping can be done as follows:
+For loop:
+---------
+for i in 1 2 3; do
+    echo $i
+done
+
+While loop:
+----------
+counter=0
+while [ $counter -lt 3 ]; do
+      let counter+=1
+      echo $counter
+done
+
+Until loop:
+-----------
+counter=6
+until [ $counter -lt 3]; do
+      let counter-=1
+      echo $counter
+done
+
+
+
