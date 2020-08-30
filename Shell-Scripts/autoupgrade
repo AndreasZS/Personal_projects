@@ -11,5 +11,3 @@ if [ "$CHECK" != "Listing..." ]
 else
     echo $'\nNOTHING TO UPGRADE. \nGOODBYE.'
 fi
-
-
